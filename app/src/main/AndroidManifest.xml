@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- DownloadManager 在 Android 10 以下需要这个权限才能写入公共 Downloads 目录，
+         Android 10 及以上系统会通过 MediaStore 自动处理，不需要这条权限也能下载。 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".ForgotPasswordActivity" android:exported="false" />
+        <activity android:name=".DashboardActivity" android:exported="false" />
+
+        <!--
+          文件内容是 base64 存在数据表记录里的，播放/在外部 App 里打开之前需要先解码
+          写成真实文件，再通过 FileProvider 包一层 content:// Uri 交给别的 App，
+          不能直接把 data: URI 或裸文件路径丢给外部 App。
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!--
+          分享查看页。这里接一个自定义 scheme（xingclouddisk://share?token=xxx）演示
+          "点开分享链接直接唤起 App"。如果要让 https://web.wangru.net/... 这种正常网页
+          链接也能直接唤起本 App（Android App Links），还需要在 web.wangru.net 域名根
+          目录放一个 .well-known/assetlinks.json 做域名归属验证，这一步需要网站那边
+          配合，不是 App 代码能单方面完成的，这里先只接自定义 scheme。
+        -->
+        <activity
+            android:name=".ShareViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="xingclouddisk" android:host="share" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

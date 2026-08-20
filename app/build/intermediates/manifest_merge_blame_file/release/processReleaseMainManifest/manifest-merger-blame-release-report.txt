@@ -1,0 +1,222 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="cn.xing.playpagefztg.xingclouddisk"
+4    android:versionCode="2"
+5    android:versionName="1.01" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="36" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:7:5-67
+11-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:7:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:8:5-79
+12-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:8:22-76
+13    <!--
+14         DownloadManager 在 Android 10 以下需要这个权限才能写入公共 Downloads 目录，
+15         Android 10 及以上系统会通过 MediaStore 自动处理，不需要这条权限也能下载。
+16    -->
+17    <uses-permission
+17-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:11:5-13:38
+18        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+18-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:12:9-65
+19        android:maxSdkVersion="28" />
+19-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:13:9-35
+20
+21    <permission
+21-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+22        android:name="cn.xing.playpagefztg.xingclouddisk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="cn.xing.playpagefztg.xingclouddisk.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+26
+27    <application
+27-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:15:5-70:19
+28        android:allowBackup="true"
+28-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:16:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.13.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/80c8d0002368c1799bff0b4f56a9c5f2/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+30        android:extractNativeLibs="true"
+31        android:icon="@mipmap/ic_launcher"
+31-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:17:9-43
+32        android:label="@string/app_name"
+32-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:19:9-41
+33        android:roundIcon="@mipmap/ic_launcher"
+33-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:18:9-48
+34        android:supportsRtl="true"
+34-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:20:9-35
+35        android:theme="@style/AppTheme" >
+35-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:21:9-40
+36        <activity
+36-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:23:9-30:20
+37            android:name="cn.xing.playpagefztg.xingclouddisk.MainActivity"
+37-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:24:13-40
+38            android:exported="true" >
+38-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:25:13-36
+39            <intent-filter>
+39-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:26:13-29:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:27:17-69
+40-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:27:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:28:17-77
+42-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:28:27-74
+43            </intent-filter>
+44        </activity>
+45        <activity
+45-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:32:9-76
+46            android:name="cn.xing.playpagefztg.xingclouddisk.LoginActivity"
+46-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:32:19-48
+47            android:exported="false" />
+47-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:32:49-73
+48        <activity
+48-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:33:9-79
+49            android:name="cn.xing.playpagefztg.xingclouddisk.RegisterActivity"
+49-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:33:19-51
+50            android:exported="false" />
+50-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:33:52-76
+51        <activity
+51-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:34:9-85
+52            android:name="cn.xing.playpagefztg.xingclouddisk.ForgotPasswordActivity"
+52-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:34:19-57
+53            android:exported="false" />
+53-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:34:58-82
+54        <activity
+54-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:35:9-80
+55            android:name="cn.xing.playpagefztg.xingclouddisk.DashboardActivity"
+55-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:35:19-52
+56            android:exported="false" />
+56-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:35:53-77
+57
+58        <!--
+59          文件内容是 base64 存在数据表记录里的，播放/在外部 App 里打开之前需要先解码
+60          写成真实文件，再通过 FileProvider 包一层 content:// Uri 交给别的 App，
+61          不能直接把 data: URI 或裸文件路径丢给外部 App。
+62        -->
+63        <provider
+64            android:name="androidx.core.content.FileProvider"
+64-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:43:13-62
+65            android:authorities="cn.xing.playpagefztg.xingclouddisk.fileprovider"
+65-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:44:13-64
+66            android:exported="false"
+66-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:45:13-37
+67            android:grantUriPermissions="true" >
+67-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:46:13-47
+68            <meta-data
+68-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:47:13-49:54
+69                android:name="android.support.FILE_PROVIDER_PATHS"
+69-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:48:17-67
+70                android:resource="@xml/file_paths" />
+70-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:49:17-51
+71        </provider>
+72
+73        <!--
+74          分享查看页。这里接一个自定义 scheme（xingclouddisk://share?token=xxx）演示
+75          "点开分享链接直接唤起 App"。如果要让 https://web.wangru.net/... 这种正常网页
+76          链接也能直接唤起本 App（Android App Links），还需要在 web.wangru.net 域名根
+77          目录放一个 .well-known/assetlinks.json 做域名归属验证，这一步需要网站那边
+78          配合，不是 App 代码能单方面完成的，这里先只接自定义 scheme。
+79        -->
+80        <activity
+80-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:59:9-68:20
+81            android:name="cn.xing.playpagefztg.xingclouddisk.ShareViewActivity"
+81-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:60:13-46
+82            android:exported="true" >
+82-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:61:13-36
+83            <intent-filter>
+83-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:62:13-67:29
+84                <action android:name="android.intent.action.VIEW" />
+84-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:63:17-69
+84-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:63:25-66
+85
+86                <category android:name="android.intent.category.DEFAULT" />
+86-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:64:17-76
+86-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:64:27-73
+87                <category android:name="android.intent.category.BROWSABLE" />
+87-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:65:17-78
+87-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:65:27-75
+88
+89                <data
+89-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:66:17-77
+90                    android:host="share"
+90-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:66:54-74
+91                    android:scheme="xingclouddisk" />
+91-->/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/src/main/AndroidManifest.xml:66:23-53
+92            </intent-filter>
+93        </activity>
+94
+95        <provider
+95-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+96            android:name="androidx.startup.InitializationProvider"
+96-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+97            android:authorities="cn.xing.playpagefztg.xingclouddisk.androidx-startup"
+97-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+98            android:exported="false" >
+98-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+99            <meta-data
+99-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+100                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+100-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+101                android:value="androidx.startup" />
+101-->[androidx.emoji2:emoji2:1.2.0] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/64727fc168dbb941d0a85c9dc71e3373/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+102            <meta-data
+102-->[androidx.lifecycle:lifecycle-process:2.6.2] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/e7d570f44a0a60efc91b82953363e184/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+103                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+103-->[androidx.lifecycle:lifecycle-process:2.6.2] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/e7d570f44a0a60efc91b82953363e184/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+104                android:value="androidx.startup" />
+104-->[androidx.lifecycle:lifecycle-process:2.6.2] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/e7d570f44a0a60efc91b82953363e184/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+105            <meta-data
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+106                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+107                android:value="androidx.startup" />
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+108        </provider>
+109
+110        <receiver
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+111            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+112            android:directBootAware="false"
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+113            android:enabled="true"
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+114            android:exported="true"
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+115            android:permission="android.permission.DUMP" >
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+116            <intent-filter>
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+117                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+118            </intent-filter>
+119            <intent-filter>
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+120                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+121            </intent-filter>
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+123                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+126                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] /data/data/com.itsaky.androidide/files/home/.gradle/caches/8.14.3/transforms/8d3ec3f2debe670a8d893f995b061253/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+127            </intent-filter>
+128        </receiver>
+129    </application>
+130
+131</manifest>

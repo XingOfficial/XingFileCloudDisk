@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 对应 FileStorageUtils.writeToCacheAndGetUri 里用的 cacheDir/shared_files 目录 -->
+    <cache-path name="shared_files" path="shared_files/" />
+</paths>

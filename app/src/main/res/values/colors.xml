@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="paper">#F6F3EC</color>
+    <color name="ink">#20201D</color>
+    <color name="ink_soft">#5B5750</color>
+    <color name="seal">#AE3A2E</color>
+    <color name="seal_dark">#8C2E24</color>
+    <color name="jade">#2F6F5E</color>
+    <color name="line">#DAD3C3</color>
+    <color name="card">#FFFDF8</color>
+    <color name="danger">#B23A2E</color>
+    <color name="app_white">#FFFFFF</color>
+</resources>

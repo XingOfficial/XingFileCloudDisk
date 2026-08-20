@@ -1,4 +1,0 @@
-#Wed Aug 19 07:04:21 GMT 2026
-base.0=/storage/emulated/0/CodeOnTheGoProjects/XingCloudDisk/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

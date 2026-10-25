@@ -1,49 +1,46 @@
 import java.util.Properties
-import java.io.FileInputStream
 
 plugins {
-    id("com.android.application") version "8.12.0"
-    id("org.jetbrains.kotlin.android") version "2.0.21"
+    id("com.android.application")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val keystorePropsFile = rootProject.file("release.properties")
-val keystoreProps = Properties()
-
-if (keystorePropsFile.exists()) {
-    FileInputStream(keystorePropsFile).use { keystoreProps.load(it) }
+val keystorePropsFile = rootProject.file("keystore.properties")
+val keystoreProps = Properties().apply {
+    if (keystorePropsFile.exists()) {
+        load(keystorePropsFile.inputStream())
+    }
 }
-
-val hasValidSigningProps = listOf(
-    "storeFile", "storePassword", "keyAlias", "keyPassword"
-).all { keystoreProps[it] != null }
+if (!keystorePropsFile.exists()) {
+    throw GradleException("未找到 keystore.properties，请先在项目根目录配置正式签名信息")
+}
 
 android {
-    namespace = "cn.xing.playpagefztg.xingclouddisk"
-    compileSdk = 36
+    namespace = "cn.xing.fileclouddisk"
+    compileSdk = 34
 
-    lint {
-        checkReleaseBuilds = false
+    defaultConfig {
+        applicationId = "cn.xing.fileclouddisk"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 8
+        versionName = "1.09.12319"
     }
 
     signingConfigs {
-        if (hasValidSigningProps) {
-            create("release") {
-                storeFile = rootProject.file(keystoreProps["storeFile"] as String)
-                storePassword = keystoreProps["storePassword"] as String
-                keyAlias = keystoreProps["keyAlias"] as String
-                keyPassword = keystoreProps["keyPassword"] as String
-            }
+        create("release") {
+            storeFile = file(keystoreProps.getProperty("storeFile"))
+            storePassword = keystoreProps.getProperty("storePassword")
+            keyAlias = keystoreProps.getProperty("keyAlias")
+            keyPassword = keystoreProps.getProperty("keyPassword")
         }
     }
 
-    defaultConfig {
-        applicationId = "cn.xing.playpagefztg.xingclouddisk"
-        minSdk = 21
-        targetSdk = 36
-        versionCode = 2
-        versionName = "1.01"
-        vectorDrawables {
-            useSupportLibrary = true
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
@@ -52,72 +49,46 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
-    buildTypes {
-        release {
-            if (hasValidSigningProps) {
-                signingConfig = signingConfigs.getByName("release")
-            }
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-
     buildFeatures {
-        viewBinding = true
+        compose = true
     }
+
     packaging {
         resources {
-            resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-            resources.excludes.add("META-INF/kotlinx_coroutines_core.version")
-            resources.pickFirsts.add("nonJvmMain/default/linkdata/package_androidx/0_androidx.knm")
-            resources.pickFirsts.add("nonJvmMain/default/linkdata/root_package/0_.knm")
-            resources.pickFirsts.add("nonJvmMain/default/linkdata/module")
-            resources.pickFirsts.add("nativeMain/default/linkdata/root_package/0_.knm")
-            resources.pickFirsts.add("nativeMain/default/linkdata/module")
-            resources.pickFirsts.add("commonMain/default/linkdata/root_package/0_.knm")
-            resources.pickFirsts.add("commonMain/default/linkdata/module")
-            resources.pickFirsts.add("commonMain/default/linkdata/package_androidx/0_androidx.knm")
-            resources.pickFirsts.add("META-INF/kotlin-project-structure-metadata.json")
-            resources.merges.add("commonMain/default/manifest")
-            resources.merges.add("nonJvmMain/default/manifest")
-            resources.merges.add("nativeMain/default/manifest")
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 
-    configurations.all {
-        resolutionStrategy {
-            force("org.jetbrains.kotlin:kotlin-stdlib:2.0.21")
-            force("org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.21")
-            force("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21")
-            force("androidx.collection:collection:1.4.2")
-            force("androidx.annotation:annotation:1.8.1")
-            force("androidx.core:core-ktx:1.8.0")
-            force("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-            force("androidx.collection:collection-ktx:1.4.2")
-        }
+    lint {
+        checkReleaseBuilds = false
     }
 }
 
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-Xlint:deprecation")
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
 }
 
 dependencies {
-    implementation("androidx.startup:startup-runtime:1.1.1")
-    implementation("androidx.interpolator:interpolator:1.0.0")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("androidx.core:core:1.13.1")
-    implementation("androidx.activity:activity:1.9.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation("androidx.activity:activity-compose:1.9.1")
+
+    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
+
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    debugImplementation("androidx.compose.ui:ui-tooling")
 }

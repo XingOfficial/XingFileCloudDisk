@@ -1,10 +1,14 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    id("com.android.application") apply false version "8.12.0"
-    id("com.android.library") apply false version "8.12.0"
-    id("org.jetbrains.kotlin.android") apply false version "2.0.21"
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.3.21")
+        classpath("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.3.21")
+    }
 }
 
-tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
+plugins {
+    id("com.android.application") version "9.3.1" apply false
 }
